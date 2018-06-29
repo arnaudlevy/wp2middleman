@@ -1,4 +1,5 @@
 require 'yaml'
+require 'fileutils'
 
 module WP2Middleman
   class Migrator
@@ -25,7 +26,7 @@ module WP2Middleman
 
     def ensure_export_directory
       unless File.directory? output_path
-        FileUtils.mkdir_p output_path
+        ::FileUtils.mkdir_p output_path
       end
     end
   end
